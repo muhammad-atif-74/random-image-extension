@@ -1,0 +1,14 @@
+{
+    "name": "Random Image Extension",
+    "description": "This extension enable you to generate random images.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "index.html"
+    },
+    "icons": {
+        "16": "images/logo-16.png",
+        "48": "images/logo-48.png",
+        "128": "images/logo-128.png"
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h1>RANDOM IMAGE GENERATOR</h1>
+        <form action="" id="form">
+            <div class="form-group">
+                <label for="">Category (optional)</label>
+                <input type="text" name="category" id="category" placeholder="e.g. Butterfly">
+            </div>
+            <div class="form-group">
+                <label for="">Width</label>
+                <input type="text" name="width" id="width" placeholder="e.g. 1024">
+            </div>
+            <div class="form-group">
+                <label for="">Height</label>
+                <input type="text" name="height" id="height" placeholder="e.g. 720">
+            </div>
+            <button class="btn" type="submit" style="margin-top: 8px;">
+                <span>Generate Image</span>
+                <div class="loader" style="display: none;"></div>
+            </button>
+        </form>
+        <div id="image-container">
+            <img id="image" src="" alt="">
+            <div>
+                <button class="btn copyLink">Copy Address</button>
+                <button class="btn download">
+                    <span>Download</span>
+                    <div class="loader" style="display: none;"></div>
+                </button>
+                <button class="btn reset">Reset</button>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
