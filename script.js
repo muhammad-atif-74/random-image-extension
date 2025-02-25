@@ -2,7 +2,7 @@
 const form = document.getElementById("form")
 const imageContainer = document.getElementById("image-container")
 const image = document.getElementById("image")
-
+const generateLoader = document.querySelector(".imageLoader");
 
 imageContainer.style.display = "none"
 
@@ -10,43 +10,26 @@ form.addEventListener("submit", handleGenerate)
 
 function handleGenerate(e) {
     e.preventDefault()
-    const category = document.querySelector("#category")
     const width = document.querySelector("#width")
     const height = document.querySelector("#height")
 
-    const generateButton = form.querySelector("button[type='submit']");
-    const generateLoader = generateButton.querySelector(".loader");
-    const generateText = generateButton.querySelector("span");
 
     if (!width.value || !height.value) {
         alert("Please fill in all fields")
         return
     }
 
-     // Show loader and disable button
-     generateLoader.style.display = "inline-block";
-     generateText.style.opacity = "0.5";
-     generateButton.disabled = true;
- 
+    // Show loader and disable button
+    generateLoader.style.display = "block";
+
 
     let imageLink = ""
-    imageContainer.style.display = "block"
+    imageContainer.style.display = "flex"
     form.style.display = "none"
-    if (!category.value) {
-        imageLink = `https://picsum.photos/${width.value}/${height.value}?random=1`
-        image.src = imageLink;
-          generateLoader.style.display = "none";
-        generateText.style.opacity = "1";
-        generateButton.disabled = false;
-    }
-    else {
-        imageLink = `https://picsum.photos/${width.value}/${height.value}?random=1`
-        image.src = imageLink;
-          generateLoader.style.display = "none";
-        generateText.style.opacity = "1";
-        generateButton.disabled = false;
-    }
-    image.alt = `Image of ${category.value} with dimensions ${width.value}x${height.value}`
+    imageLink = `https://picsum.photos/${width.value}/${height.value}?random=1`
+    image.src = imageLink;
+    generateLoader.style.display = "none";
+    image.alt = `Image with dimensions ${width.value}x${height.value}`
 
 
 
@@ -88,7 +71,6 @@ function handleGenerate(e) {
     const handleReset = () => {
         form.style.display = "block"
         imageContainer.style.display = "none"
-        category.value = ""
         width.value = ""
         height.value = ""
     }

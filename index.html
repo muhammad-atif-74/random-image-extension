@@ -14,10 +14,6 @@
         <h1>RANDOM IMAGE GENERATOR</h1>
         <form action="" id="form">
             <div class="form-group">
-                <label for="">Category (optional)</label>
-                <input type="text" name="category" id="category" placeholder="e.g. Butterfly">
-            </div>
-            <div class="form-group">
                 <label for="">Width</label>
                 <input type="text" name="width" id="width" placeholder="e.g. 1024">
             </div>
@@ -27,12 +23,14 @@
             </div>
             <button class="btn" type="submit" style="margin-top: 8px;">
                 <span>Generate Image</span>
-                <div class="loader" style="display: none;"></div>
             </button>
         </form>
         <div id="image-container">
-            <img id="image" src="" alt="">
-            <div>
+            <div class="imageLoader" style="display: none;"></div>
+            <div class="imageWrapper">
+                <img id="image" src="" alt="">
+            </div>
+            <div style="margin-top: 12px;">
                 <button class="btn copyLink">Copy Address</button>
                 <button class="btn download">
                     <span>Download</span>
